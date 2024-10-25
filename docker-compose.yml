@@ -11,8 +11,6 @@ services:
     volumes:
       - ./backend:/usr/src/app/backend
       - /usr/src/app/backend/node_modules
-    environment:
-      USER_NAME: Aditya
     command: npm start
 
   frontend_service:
@@ -25,7 +23,4 @@ services:
     volumes:
       - ./frontend:/usr/src/app/frontend
       - /usr/src/app/frontend/node_modules
-    environment:
-      USER_NAME: Aditya
-      VITE_USER_NAME: Aditya
-    command: npm run dev
+    command: npm run dev -- --host
